@@ -20,7 +20,7 @@ chrome.runtime.onInstalled.addListener(function() {
     if(changeInfo.status === 'loading') {
       console.log(tab.url)
 
-      let patt = /(www.cbs.com\/shows\/)[a-z-]*(\/video\/)/i;
+      let patt = /(www.cbs.com\/shows\/)[a-z-_]*(\/video\/)/i;
 
       if(patt.test(tab.url)) {
         chrome.notifications.create(null, {
