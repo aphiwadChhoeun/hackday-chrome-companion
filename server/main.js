@@ -5,7 +5,7 @@ const app = express()
 
 app.get('/', (req, res) => {
   const options = {
-    uri: `https://www.cbs.com/shows/big_bang_theory/video/IHrwfmy0_bHC1tJrEeSGBjNQiv2OeiwT/the-big-bang-theory-the-tesla-recoil/`,
+    uri: req.query.url,
     transform: function (body) {
       return cheerio.load(body);
     }
