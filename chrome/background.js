@@ -25,7 +25,7 @@ chrome.runtime.onInstalled.addListener(function() {
       if(patt.test(tab.url)) {
         chrome.notifications.create(null, {
           type: "basic",
-          iconUrl: "images/get_started48.png",
+          iconUrl: "images/Icon-48.png",
           title: "CBS Companion",
           message: "Interesting articles related to your show available!"
         });
