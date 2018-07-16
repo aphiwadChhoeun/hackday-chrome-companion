@@ -14,8 +14,35 @@ app.get('/', (req, res) => {
   rp(options)
     .then(($) => {
       const title = $('span#series_title').html()
-      console.log(title)
-      res.send(title)
+
+      const opt = {
+        uri: 'https://www.cbsnews.com/search/?q=' + encodeURI(title),
+        transform: function (body) {
+          return cheerio.load(body);
+        }
+      }
+
+      rp(opt)
+        .then(($) => {
+          const resultArr = $('.result-list ul.items li');
+          const items = [];
+
+          resultArr.each(function() {
+            let temp = {
+              title: $(this).find('a h3.title').text(),
+              href: 'https://www.cbsnews.com' + $(this).find('a').attr('href'),
+              thumb: $(this).find('a figure.media-figure img').attr('src'),
+              body: $(this).find('div.media-body p.dek ').html(), 
+            }
+
+            items.push(temp)
+          })
+
+          res.send(JSON.stringify(items))
+        })
+        .catch((err) => {
+          console.log(err)
+        })
     })
     .catch((err) => {
       console.log(err);

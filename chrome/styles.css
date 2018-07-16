@@ -1,4 +1,49 @@
 body {
   width: 400px;
   min-height: 600px;
+  background: #121212;
+}
+
+#message .loader {
+  color: #f3f3f3;
+}
+
+ul.result {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+ul.result li {
+  display: block;
+  clear: both;
+  height: 140px;
+  overflow: hidden;
+}
+
+ul.result li a.header {
+  font-style: none;
+  font-size: 16px;
+  color: #f3f3f3;
+  display: block;
+  padding-bottom: 4px;
+}
+
+ul.result li a.header:hover, ul.result li a.header:active {
+  color: #0092F3
+}
+
+ul.result li div.thumb {
+  float: left;
+  margin-right: 5px;
+}
+
+ul.result li div.thumb img {
+  width: 140px;
+  height: 90px;
+}
+
+ul.result li div.desc {
+  font-size: 14px;
+  color: #AAAAAA;
 }
