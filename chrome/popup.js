@@ -4,6 +4,10 @@ $(document).ready(() => {
       url: tab.url
     })
       .done(function( data ) {
+        if(data.length <= 0) {
+          return
+        }
+
         let msg = `You're watching "${data}"`;
         $('#message').text(msg)
       });
