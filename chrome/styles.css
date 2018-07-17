@@ -72,6 +72,7 @@ ul li{
 
 ul li:hover h2 {
   color: #0092F3;
+  transition: color 200ms ease-out;
 }
 
 ul li::after{
