@@ -39,7 +39,7 @@ $(document).ready(() => {
 		
 		message.append('<div class="loader">' + loader + '</div>');
 		
-		$.get("http://localhost:3000", {
+		$.get("https://cbs-companion-server.herokuapp.com", {
 			url: tab.url
 		})
 		.done(function (data) {
@@ -70,7 +70,7 @@ $(document).ready(() => {
 			message.html(tpl)
 				.css('display', 'none')
 				.fadeIn('fast');
-				
+
 			message.find('li').click(function(){
 				window.open($(this).data('href'));
 			});
