@@ -67,7 +67,10 @@ $(document).ready(() => {
 			
 			tpl = tpl.replace(/{items}/g, itemsHtml);
 			
-			message.html(tpl);
+			message.html(tpl)
+				.css('display', 'none')
+				.fadeIn('fast');
+				
 			message.find('li').click(function(){
 				window.open($(this).data('href'));
 			});
