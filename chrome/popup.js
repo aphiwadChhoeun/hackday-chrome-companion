@@ -50,7 +50,7 @@ $(document).ready(() => {
 			
 			let itemsHtml = '';
 			let tpl = template;
-			let items = JSON.parse(data);
+			let items = data;
 			
 			items.forEach((item, idx) => {
 				
