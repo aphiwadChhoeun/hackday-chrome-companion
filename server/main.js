@@ -4,6 +4,9 @@ const cheerio = require('cheerio')
 const app = express()
 
 app.get('/', (req, res) => {
+
+  res.json({test: true})
+  
   const options = {
     uri: req.query.url,
     transform: function (body) {
