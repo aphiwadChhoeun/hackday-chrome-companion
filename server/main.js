@@ -28,11 +28,13 @@ app.get('/', (req, res) => {
           const items = [];
 
           resultArr.each(function() {
+            
             let temp = {
               title: $(this).find('a h3.title').text(),
               href: 'https://www.cbsnews.com' + $(this).find('a').attr('href'),
               thumb: $(this).find('a figure.media-figure img').attr('src'),
-              body: $(this).find('div.media-body p.dek ').html(), 
+              body: $(this).find('div.media-body p.dek ').html(),
+              isVideo: $(this).find('.play-video').length > 0
             }
 
             items.push(temp)
@@ -51,5 +53,4 @@ app.get('/', (req, res) => {
 
 const listener = app.listen(3000, () => {
   console.log('app is running on port 3000');
-  console.log('it works');
 })
