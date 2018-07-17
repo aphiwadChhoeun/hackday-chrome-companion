@@ -6,7 +6,7 @@ const app = express()
 app.get('/', (req, res) => {
 
   res.json({test: true})
-  
+
   const options = {
     uri: req.query.url,
     transform: function (body) {
@@ -54,6 +54,6 @@ app.get('/', (req, res) => {
     });
 })
 
-const listener = app.listen(3000, () => {
+const listener = app.listen(80, () => {
   console.log('app is running on port 3000');
 })
