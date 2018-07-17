@@ -41,7 +41,7 @@ app.get('/', (req, res) => {
             items.push(temp)
           })
 
-          res.send(JSON.stringify(items))
+          res.json(items)
         })
         .catch((err) => {
           console.log(err)
