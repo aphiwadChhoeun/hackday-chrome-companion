@@ -1,0 +1,26 @@
+{
+  "name": "hackday-chrome-companion",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aphiwadChhoeun/hackday-chrome-companion.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aphiwadChhoeun/hackday-chrome-companion/issues"
+  },
+  "homepage": "https://github.com/aphiwadChhoeun/hackday-chrome-companion#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.3",
+    "nodemon": "^1.18.2",
+    "request": "^2.87.0",
+    "request-promise": "^4.2.2"
+  }
+}
