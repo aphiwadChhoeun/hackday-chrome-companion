@@ -13,7 +13,7 @@ $(document).ready(() => {
 		
 		let itemTemplate = `
 		
-			<li data-href='{href}'>
+			<li data-href='{href}' title='\\//\\// Aphiwad Chhoeun Rulez \\//\\//'>
 				<h2>{title}</h2>
 				<div>
 					<img src='{thumb}'>
