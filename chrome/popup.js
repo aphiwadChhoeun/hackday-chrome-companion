@@ -1,6 +1,7 @@
 $(document).ready(() => {
 	
-	let message = $('#article');
+	let articleBox = $('#article');
+	let videoBox = $('#video');
 	let template = "<ul>{items}</ul>";
 
 	let itemTemplate = `
@@ -26,7 +27,7 @@ $(document).ready(() => {
 		</svg>
 	`;
 	
-	message.append('<div class="loader">' + loader + '</div>');
+	articleBox.append('<div class="loader">' + loader + '</div>');
 
 	chrome.tabs.getSelected(null, function (tab) {
 	
@@ -44,7 +45,7 @@ $(document).ready(() => {
 				// http://localhost:3000
 				let prodHost = 'https://cbs-companion-server.herokuapp.com';
 				let devHost = 'http://localhost:3000';
-				let apiHost = document.location.href.indexOf('www.cbs.com') !== -1 ? prodHost : devHost;
+				let apiHost = tab.url.indexOf('www.cbs.com') !== -1 ? prodHost : devHost;
 				
 				$.ajax({
 					url: apiHost,
@@ -79,7 +80,7 @@ $(document).ready(() => {
 		
 	});
 
-	let renderResult = function(data) {
+	let renderArticles = function(data) {
 		let itemsHtml = '';
 		let tpl = template;
 		let items = data;
@@ -99,13 +100,43 @@ $(document).ready(() => {
 		
 		tpl = tpl.replace(/{items}/g, itemsHtml);
 		
-		message.html(tpl)
-			.css('display', 'none')
-			.fadeIn('fast');
+		articleBox.html(tpl);
 	
-		message.find('li').click(function(){
+		articleBox.find('li').click(function(){
 			window.open($(this).data('href'));
 		});
+	}
+
+	let renderVideos = function(data) {
+		let itemsHtml = '';
+		let tpl = template;
+		let items = data;
+		
+		items.forEach((item, idx) => {
+			
+			let li = itemTemplate;
+			li = li.replace(/{href}/g, item.href);
+			li = li.replace(/{title}/g, item.title);
+			li = li.replace(/{thumb}/g, item.thumb);
+			li = li.replace(/{body}/g, item.body);
+			li = li.replace(/{isVideo}/g, item.isVideo);
+		
+			itemsHtml += li;
+		
+		});
+		
+		tpl = tpl.replace(/{items}/g, itemsHtml);
+
+		videoBox.html(tpl);
+	
+		videoBox.find('li').click(function(){
+			window.open($(this).data('href'));
+		});
+	}
+
+	let renderResult = function(data) {
+		renderArticles(data.articles);
+		renderVideos(data.videos);
 	}
 
 });
