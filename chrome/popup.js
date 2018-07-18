@@ -37,8 +37,6 @@ $(document).ready(() => {
 		let titleEnd = tabTitle.indexOf('Season') !== -1 ? tabTitle.indexOf('Season') : tabTitle.indexOf(':');
 		let title = tabTitle.substring(titleStart,titleEnd);
 		
-		alert(title);
-
 		chrome.storage.local.get([localKey], function(result) {
 
 			if(typeof result[localKey] === 'undefined') {
