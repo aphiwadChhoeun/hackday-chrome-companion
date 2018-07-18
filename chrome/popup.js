@@ -5,12 +5,6 @@ $(document).ready(() => {
 
 	chrome.tabs.getSelected(null, function (tab) {
 		
-		let test = function(){
-			"use strict";
-			alert('test');
-			window.open('http://www.cbs.com');
-		}
-		
 		let itemTemplate = `
 		
 			<li data-href='{href}'>
