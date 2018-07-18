@@ -2,7 +2,7 @@
   "name": "CBS Companion",
   "version": "1.0",
   "description": "Chrome extension of CBS Companion.",
-  "permissions": ["declarativeContent", "notifications", "tabs", "http://localhost:3000/", "https://cbs-companion-server.herokuapp.com/", "https://www.cbsnews.com/search/*"],
+  "permissions": ["declarativeContent", "notifications", "tabs", "storage", "http://localhost:3000/", "https://cbs-companion-server.herokuapp.com/", "https://www.cbsnews.com/search/*"],
   "background": {
     "scripts": ["background.js"],
     "persistent": false

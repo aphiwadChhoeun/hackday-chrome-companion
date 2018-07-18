@@ -9,53 +9,25 @@ body {
   color: #f3f3f3;
 }
 
-/*
-ul.result {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-ul.result li {
+.control-panel {
   display: block;
-  clear: both;
-  height: 140px;
-  overflow: hidden;
+  width: 100%;
 }
 
-ul.result li a.header {
-  text-decoration: none;
-  font-size: 16px;
-  color: #f3f3f3;
-  display: block;
-  padding-bottom: 4px;
-}
-
-ul.result li a.header:hover, ul.result li a.header:active {
-  color: #0092F3
-}
-
-ul.result li div.thumb {
-  float: left;
-  margin-right: 5px;
-}
-
-.thumb img{
-  display: block;
-}
-
-ul.result li div.thumb img {
-  width: 140px;
-  height: 90px;
-}
-
-ul.result li div.desc {
+.button {
+  border: none;
+  padding: 5px 20px;
+  display: inline-block;
+  background-color: #1056C9;
+  color: #121212;
   font-size: 14px;
-  color: #AAAAAA;
+  text-transform: uppercase;
+  cursor: pointer;
 }
-*/
 
-/* new styles */
+.button:hover {
+  background-color: #0092F3;
+}
 
 ul{
   margin: 0;
