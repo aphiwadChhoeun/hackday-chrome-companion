@@ -1,6 +1,6 @@
 $(document).ready(() => {
 	
-	let message = $('#message');
+	let message = $('#article');
 	let template = "<ul>{items}</ul>";
 
 	let itemTemplate = `
@@ -64,8 +64,17 @@ $(document).ready(() => {
 			
 		});
 		
+		// REMOVE THIS LATER PLZZZZ
 		$('#btnPurge').click(function() {
 			chrome.storage.local.clear();
+		});
+
+		// tabs switching
+		$('.tabs li a').click(function() {
+			$('.content').hide();
+			$('.tabs li').removeClass('active');
+			$(this).parent('li').addClass('active');
+			$('#' + $(this).data('target')).fadeIn('fast');
 		});
 		
 	});

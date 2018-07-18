@@ -5,13 +5,56 @@ body {
   color: #f3f3f3;
 }
 
-#message .loader {
+.container .loader {
   color: #f3f3f3;
 }
 
-.control-panel {
+.container .content {
+  width: 100%;
+  height: auto;
+}
+
+.tab-panel {
   display: block;
   width: 100%;
+}
+
+.tab-panel {
+  display: block;
+  width: 100%;
+}
+
+.tab-panel ul.tabs {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+.tab-panel ul.tabs li {
+  display: inline-block;
+  border-top: 1px solid #f3f3f3;
+  border-left: 1px solid #f3f3f3;
+  border-right: 1px solid #f3f3f3;
+  border-radius: 5px 5px 0px 0px;
+  padding: 5px 0px;
+}
+
+.tab-panel ul.tabs li.active {
+  background-color: #1f1f1f;
+}
+
+.tab-panel ul.tabs li.active a, .tab-panel ul.tabs li a:hover {
+  color: #0092F3;
+}
+
+.tab-panel ul.tabs li a {
+  color: #f3f3f3;
+  text-decoration: none;
+  padding: 0px 25px;
+}
+
+.tab-panel ul.tabs li a:hover {
+  transition: color 200ms ease-out;
 }
 
 .button {
@@ -29,12 +72,17 @@ body {
   background-color: #0092F3;
 }
 
-ul{
+.container {
+  background-color: #1f1f1f;
+  padding-top: 1px;
+}
+
+.container ul{
   margin: 0;
   padding: 0;
 }
 
-ul li{
+.container ul li{
   display: block;
   clear: left;
   cursor: pointer;
@@ -42,12 +90,12 @@ ul li{
   padding-bottom: 10px;
 }
 
-ul li:hover h2 {
+.container ul li:hover h2 {
   color: #0092F3;
   transition: color 200ms ease-out;
 }
 
-ul li::after{
+.container ul li::after{
   content: " ";
   border-bottom: solid 1px #2f2f2f;
   position: absolute;
@@ -56,19 +104,19 @@ ul li::after{
   right: 0;
 }
 
-div::after{
+.container div::after{
   content: " ";
   clear: left;
   display: block;
 }
 
-h2 {
+.container h2 {
   font-size: 16px;
   color: #f3f3f3;
   padding-bottom: 4px;
 }
 
-img{
+.container img{
   float: left;
   margin-right: 10px;
   margin-bottom: 10px;
@@ -76,14 +124,14 @@ img{
   height: auto;
 }
 
-.body{
+.container .body{
   color: #aaa;
 }
 
-.isVideo-false{
+.container .isVideo-false{
   display: none;
 }
-.isVideo-true{
+.container .isVideo-true{
   display: inline-block;
   margin-top: 5px;
   background-color: #fff21e;
@@ -92,7 +140,7 @@ img{
   border-radius: 5px;
 }
 
-.loader{
+.container .loader{
   text-align: center;
   margin-top: 30px;
   width: 100%;

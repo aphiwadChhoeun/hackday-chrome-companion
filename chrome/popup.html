@@ -6,11 +6,16 @@
     <script src="popup.js"></script>
   </head>
   <body>
-    <div class="control-panel">
-      <button id="btnPurge" class="button">Purge</button>
+    <button id="btnPurge" class="button">Purge</button>
+    <div class="tab-panel">
+      <ul class="tabs">
+        <li class="active"><a href="#" data-target="article">Articles</a></li>
+        <li><a href="#" data-target="video">Videos</a></li>
+      </ul>
     </div>
     <div class="container">
-      <div id="message"></div>
+      <div id="article" class="content"></div>
+      <div id="video" class="content" style="display: none;"></div>
     </div>
   </body>
 </html>
