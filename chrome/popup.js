@@ -1,5 +1,19 @@
 $(document).ready(() => {
 	
+	let adsMap = [
+		{
+			img: './images/ads1.jpg',
+			href: 'https://www.blackoakcasino.com/'
+		},
+		{
+			img: './images/ads2.jpg',
+			href: 'https://www.ikea.com/us/en/'
+		},
+		{
+			img: './images/ads3.jpg',
+			href: 'https://www.blackoakcasino.com/'
+		}
+	];
 	let articleBox = $('#article');
 	let videoBox = $('#video');
 	let template = "<ul>{items}</ul>";
@@ -8,7 +22,7 @@ $(document).ready(() => {
 		<li data-href='{href}'>
 			<h2>{title}</h2>
 			<div>
-				<img src='{thumb}'>
+				<img class="thumb" src='{thumb}'>
 				{body}
 				<span class='isVideo-{isVideo}'>Video</span>
 			</div>
@@ -84,6 +98,23 @@ $(document).ready(() => {
 		
 	});
 
+	let getAds = function() {
+		let rnd = Math.floor(Math.random() * 3);
+		return adsMap[rnd];
+	}
+
+	let renderAds = function() {
+		let ad = getAds();
+
+		return `
+			<li data-href="${ad.href}">
+				<div class="ads">
+					<img src="${ad.img}"/>
+				</div>
+			</li>
+		`;
+	}
+
 	let renderArticles = function(data) {
 		let itemsHtml = '';
 		let tpl = template;
@@ -99,6 +130,10 @@ $(document).ready(() => {
 			li = li.replace(/{isVideo}/g, item.isVideo);
 		
 			itemsHtml += li;
+
+			if((idx+1) % 3 === 0) {
+				itemsHtml += renderAds();
+			}
 		
 		});
 		
@@ -126,6 +161,10 @@ $(document).ready(() => {
 			li = li.replace(/{isVideo}/g, item.isVideo);
 		
 			itemsHtml += li;
+
+			if((idx+1) % 3 === 0) {
+				itemsHtml += renderAds();
+			}
 		
 		});
 		
