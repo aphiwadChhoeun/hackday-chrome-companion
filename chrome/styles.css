@@ -116,7 +116,7 @@ body {
   padding-bottom: 4px;
 }
 
-.container img{
+.container img.thumb{
   float: left;
   margin-right: 10px;
   margin-bottom: 10px;
@@ -144,4 +144,13 @@ body {
   text-align: center;
   margin-top: 30px;
   width: 100%;
+}
+
+.container .ads {
+  margin-top: 10px;
+}
+
+.container .ads img {
+  width: 400px;
+  height: auto;
 }
