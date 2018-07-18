@@ -34,8 +34,10 @@ $(document).ready(() => {
 		let tabTitle = tab.title;
 		let localKey = tabTitle;
 		let titleStart = 6;
-		let titleEnd = tabTitle.indexOf('Season');
+		let titleEnd = tabTitle.indexOf('Season') !== -1 ? tabTitle.indexOf('Season') : tabTitle.indexOf(':');
 		let title = tabTitle.substring(titleStart,titleEnd);
+		
+		alert(title);
 
 		chrome.storage.local.get([localKey], function(result) {
 
