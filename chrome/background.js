@@ -20,14 +20,14 @@ chrome.runtime.onInstalled.addListener(function() {
     if(changeInfo.status === 'loading') {
       console.log(tab.url)
 
-      let patt = /(www.cbs.com\/shows\/)[a-z-_]*(\/video\/)/i;
+      let patt = /(www.cbs.com\/shows\/)[a-zA-Z\d_-]+(\/video\/)/i;
 
       if(patt.test(tab.url)) {
         chrome.notifications.create(null, {
           type: "basic",
           iconUrl: "images/Icon-48.png",
           title: "CBS Companion",
-          message: "Interesting articles related to your show available!"
+          message: "Interesting articles about your show are available!"
         });
       }
 
