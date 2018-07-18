@@ -31,8 +31,8 @@ $(document).ready(() => {
 
 	chrome.tabs.getSelected(null, function (tab) {
 	
-		let localKey = tab.url;
 		let tabTitle = tab.title;
+		let localKey = tabTitle;
 		let titleStart = 6;
 		let titleEnd = tabTitle.indexOf('Season');
 		let title = tabTitle.substring(titleStart,titleEnd);
@@ -41,8 +41,6 @@ $(document).ready(() => {
 
 			if(typeof result[localKey] === 'undefined') {
 				
-				//
-				// http://localhost:3000
 				let prodHost = 'https://cbs-companion-server.herokuapp.com';
 				let devHost = 'http://localhost:3000';
 				let apiHost = tab.url.indexOf('www.cbs.com') !== -1 ? prodHost : devHost;
@@ -56,7 +54,13 @@ $(document).ready(() => {
 						provider: 'cbsnews'
 					}
 				}).done(function(data){
-					renderResult(data);
+
+					chrome.storage.local.set({
+						[localKey]: data
+					}, function() {
+						renderResult(data);
+					});
+
 				});
 				
 			} else {
