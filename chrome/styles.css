@@ -1,8 +1,16 @@
+html,body{
+  background: #121212;
+  color: #f3f3f3;
+}
+
 body {
   width: 400px;
   min-height: 600px;
-  background: #121212;
-  color: #f3f3f3;
+
+}
+
+img[src="undefined"]{
+  display: none;
 }
 
 .container .loader {
@@ -10,8 +18,11 @@ body {
 }
 
 .container .content {
-  width: 100%;
   height: auto;
+}
+
+.container > div{
+  padding: 0 10px;
 }
 
 .tab-panel {
